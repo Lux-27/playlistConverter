@@ -7,7 +7,7 @@ import styles from "./styles.scss";
 const spotifyApi = new SpotifyWebApi({
   clientId: "", //ENTER SPOTIFY CLIENT ID
   clientSecret: "", //ENTER SPOTIFY CLIENT SECRET
-  redirectUri: "http://localhost:5173/",
+  redirectUri: "", //ENTER REDIRECT URL from spotify
 });
 
 const SongList = ({ token }) => {
