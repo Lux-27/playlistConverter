@@ -10,6 +10,8 @@ const spotifyApi = new SpotifyWebApi({
   redirectUri: "", //ENTER REDIRECT URL from spotify
 });
 
+const YOUTUBE_API_KEY = ""; //ENTER YOUR YOUTUBE API KEY
+
 const SongList = ({ token }) => {
   const [playlistUrl, setPlaylistUrl] = useState("");
   const [songs, setSongs] = useState([]);
@@ -100,7 +102,7 @@ const SongList = ({ token }) => {
       while (true) {
         // Make a request to the YouTube Data API with maxResults set to 100 and the nextPageToken
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/playlistItems?key=ENTER_YOUR_YOUTUBEDEV_API_KEY&part=snippet&maxResults=100&playlistId=${playlistId}&pageToken=${nextPageToken}`
+          `https://www.googleapis.com/youtube/v3/playlistItems?key=${YOUTUBE_API_KEY}&part=snippet&maxResults=100&playlistId=${playlistId}&pageToken=${nextPageToken}`
         );
 
         if (response.data.items) {
